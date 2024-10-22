@@ -1,5 +1,53 @@
-$bkgcolor:blue;
+@use 'var';
+@use 'hero';
+
+
+@mixin text($fontSize: 16px){
+    color: var.$texcolorP;
+    font-size: $fontSize;
+    line-height: $fontSize + 10px;
+}
+@mixin title($fontSize:40px){
+    @include text($fontSize);
+    color: var.$texcolorS;
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
 
 body{
-    background-color: $bkgcolor;
+    background-color: var.$bkgcolor;
+}
+
+.text--big{
+    @include text(18px);
+}
+
+.text{
+    @include text;
+}
+
+.text--small{
+    @include text(12px);
+}
+
+.link-text{
+    @include text(18px);
+    color: var.$texcolorS;
+    text-decoration: underline;
+}
+
+.title--big{
+    @include title(44px);
+}
+
+title{
+    @include title;
+}
+
+.title--small{
+    @include title(28px);
 }
