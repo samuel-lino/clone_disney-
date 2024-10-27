@@ -1,6 +1,16 @@
 @use 'var';
 @use 'hero';
 
+@font-face{
+    font-family: Avenir;
+    src: url(../../assets/fonts/Avenir-Regular.woff2);
+    font-weight: 400;
+}
+@font-face{
+    font-family: Avenir;
+    src: url(../../assets/fonts/Avenir-Bold.woff2);
+    font-weight: 700;
+}
 
 @mixin text($fontSize: 16px){
     color: var.$texcolorP;
@@ -20,6 +30,7 @@
 
 body{
     background-color: var.$bkgcolor;
+    font-family: Avenir, sans-serif;
 }
 
 .text--big{
