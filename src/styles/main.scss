@@ -1,5 +1,6 @@
 @use 'var';
 @use 'hero';
+@use 'shows';
 
 @font-face{
     font-family: Avenir;
@@ -26,11 +27,11 @@
     margin: 0;
     box-sizing: border-box;
     padding: 0;
+    font-family: Avenir, sans-serif;
 }
 
 body{
     background-color: var.$bkgcolor;
-    font-family: Avenir, sans-serif;
 }
 
 .text--big{
