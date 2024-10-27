@@ -1,6 +1,7 @@
 @use 'var';
 @use 'hero';
 @use 'shows';
+@use 'plans';
 
 @font-face{
     font-family: Avenir;
@@ -62,4 +63,19 @@ title{
 
 .title--small{
     @include title(28px);
+}
+
+.button{
+    display: block;
+    width: 100%;
+    height: 56px;
+    font-size: 18px;
+    color: var.$texcolorS;
+    background-color: #6421ff;
+    border: none;
+    text-transform: uppercase;
+    border-radius: 4px;
+    margin-top: 1.5vw;
+    margin-bottom: 8px;
+    cursor: pointer;
 }
