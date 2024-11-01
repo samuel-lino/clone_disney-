@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function(){
     const buttons = document.querySelectorAll('[data-tab-button]');
+    const questions = document.querySelectorAll('[data-faq-selection]');
     buttons.forEach(button =>{
         button.addEventListener('click', function(){
             remove_classe_active();
@@ -9,7 +10,19 @@ document.addEventListener('DOMContentLoaded', function(){
             const new_display = document.querySelector(`[data-tab-id=${text_display}]`);// busca o display correspondente ao button
             new_display.classList.add('shows__list--active'); // adiciona a classe ativa
         })
-    })
+    });
+
+    questions.forEach(question=>{
+        question.addEventListener('click', function() {  
+            const questionparent = question.parentElement
+            if(questionparent.classList.contains('faq__questions__item--open')){
+                questionparent.classList.remove('faq__questions__item--open');
+            }
+            else{
+                questionparent.classList.add('faq__questions__item--open');
+            }
+        });
+    });
 
     function remove_classe_active(){
         const atual = document.querySelector('.shows__tabs__button--active');//pega o button atual com a classe
