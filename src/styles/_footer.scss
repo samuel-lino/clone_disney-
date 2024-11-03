@@ -1,0 +1,62 @@
+@use 'var';
+
+.footer{
+    padding: 5.6vw;
+
+
+    &__container{
+        max-width: 1016px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+
+        &__logo{
+            height: 80px;
+            margin: 0 auto 10px;
+        }
+
+        &__text{
+            margin-bottom: 16px;
+        }
+
+        &__links{
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            &__link{
+                display: inline-block;
+                a{
+                    text-decoration: none;
+                    padding: 8px 16px;
+                    display: block;
+
+                    &:hover{
+                        color: var.$texcolorS;
+                    }
+                }
+            }
+        }
+    }
+}
+.language-selector{
+    display: flex;
+    align-items: center;
+    img{
+        width: 18px;
+        height: 18px;
+    }
+    select{
+        background-color: transparent;
+        border: none;
+        color: var.$texcolorP;
+        height: 38px;
+
+        &:hover{
+            color: var.$texcolorS;
+        }
+        option{
+            color: var.$bkgcolor;
+        }
+    }
+}
