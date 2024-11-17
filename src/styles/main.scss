@@ -5,6 +5,7 @@
 @use 'dispositivos-favoritos';
 @use 'faq';
 @use 'footer';
+@use 'header';
 
 @font-face{
     font-family: Avenir;
@@ -32,6 +33,7 @@
     box-sizing: border-box;
     padding: 0;
     font-family: Avenir, sans-serif;
+    list-style: none;
 }
 
 body{
@@ -40,14 +42,23 @@ body{
 
 .text--big{
     @include text(18px);
+    @media (max-width:768px){
+        @include text(15px);
+    }
 }
 
 .text{
     @include text;
+    @media (max-width:768px){
+        @include text(14px);
+    }
 }
 
 .text--small{
     @include text(12px);
+    @media (max-width:768px){
+        @include text(11px);
+    }
 }
 
 .link-text{
@@ -58,29 +69,66 @@ body{
 
 .title--big{
     @include title(44px);
+    @media (max-width:768px){
+        @include title(26px);
+    }
 }
 
 .title{
     @include title;
+
+    @media (max-width:768px){
+        @include title(24px);
+    }
+
 }
 
 .title--small{
     @include title(28px);
+    @media (max-width:768px){
+        @include title(22px);
+    }
 }
 
 .button{
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 56px;
     font-size: 18px;
     color: var.$texcolorS;
-    background-color: #6421ff;
+    background-color: var.$butonPri;
     border: none;
     text-transform: uppercase;
     border-radius: 4px;
-    margin-top: 1.5vw;
-    margin-bottom: 8px;
     cursor: pointer;
+    text-decoration: none;
+    padding: 8px 14px;
+    letter-spacing: 1px;
+    border: 1px solid var.$butonPri;
+    &:hover{
+        background-color: lighten(var.$butonPri, 3%);
+    }
+
+    &--secondary{
+        background-color: var.$butonSec;
+        border-color: var.$butonSec;
+
+        &:hover{
+            background-color: lighten(var.$butonSec, 3%);
+        }
+    }
+
+    &--dark{
+        background-color: var.$buttonDark;
+        border-color: var.$texcolorS;
+
+        &:hover{
+            background-color: var.$texcolorS;
+            color: var.$bkgcolor;
+        }
+    }
 }
 
 .image-text-section{
@@ -88,6 +136,10 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+
+    @media (max-width:768px){
+        display: block;
+    }
 
     img{
         max-width: 100%;
@@ -104,6 +156,7 @@ body{
     &--image-full{
         display: block;
         position: relative;
+    
 
         img{
             width: 100%;
@@ -117,6 +170,12 @@ body{
             justify-content: center;
             left: 50%;
             width: calc(50% - 5.6vw);
+            @media (max-width:768px){
+                position: relative;
+                left: 0;
+                width: 100%;
+            }
+        
         }
     }
 }

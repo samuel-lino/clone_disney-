@@ -2,11 +2,22 @@
 
 .hero{
     padding: 5.6vw;
+    min-height: 80vh;
     background-image: url(../images/hero_desktop.jpeg);
-    background-size: 100%;
-    max-width: 100vw;
-    background-repeat: no-repeat;
+    background-size: cover;
     text-align: center;
+    @media (max-width:768px){
+        background-image: url(../images/hero_celular.jpeg);
+        padding-top: calc(50vw + 25px);
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-top: -55px;
+    }
+
+    .button{
+        margin-top: 1.5vw;
+        margin-bottom: 8px;
+    }
 
     &__content{
         max-width: 500px;
@@ -16,6 +27,9 @@
             margin: 0 auto 32px;
             img{
                 height: 20vh;
+            }
+            @media (max-width:768px){
+                max-width: 180px;
             }
         }
 
@@ -34,11 +48,18 @@
         &__combos{
             display: flex;
             justify-content: space-between;
+            @media (max-width:768px){
+                display: block;
+            }
 
             &__combo{
                 width: calc(50% - 12px);
                 img{
                     height: 60px;
+                }
+                @media (max-width:768px){
+                    width: 100%;
+                    margin-bottom: 24px;
                 }
             }
         }

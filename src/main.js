@@ -1,6 +1,22 @@
 document.addEventListener('DOMContentLoaded', function(){
     const buttons = document.querySelectorAll('[data-tab-button]');
     const questions = document.querySelectorAll('[data-faq-selection]');
+    const heroselect = document.querySelector('.hero');
+    const alturahero = heroselect.clientHeight;
+    const header = document.querySelector('.header');
+
+    window.addEventListener('scroll', function(){
+        if(this.window.scrollY < alturahero){
+
+            header.classList.add('header--is-hidden');
+        }
+        else{
+            header.classList.remove('header--is-hidden');
+        }
+    })
+
+
+    //abas do shows
     buttons.forEach(button =>{
         button.addEventListener('click', function(){
             remove_classe_active();
@@ -12,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function(){
         })
     });
 
+    //sanfona do faq
     questions.forEach(question=>{
         question.addEventListener('click', function() {  
             const questionparent = question.parentElement
@@ -23,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function(){
             }
         });
     });
-
+    //renove classe active do shows
     function remove_classe_active(){
         const atual = document.querySelector('.shows__tabs__button--active');//pega o button atual com a classe
         atual.classList.remove('shows__tabs__button--active');// remove a classe do button
